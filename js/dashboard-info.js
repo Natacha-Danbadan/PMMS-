@@ -145,6 +145,13 @@ document.querySelector('.time').innerHTML = time;
 document.querySelector('.time-one').innerHTML = time;
 document.querySelector('.time-two').innerHTML = time;
 document.querySelector('.data-date').textContent =  dataDate;
+document.querySelector('.data-date-two').textContent =  dataDate;
+document.querySelector('.data-date-three').textContent =  dataDate;
+document.querySelector('.data-date-four').textContent =  dataDate;
+document.querySelector('.data-date-five').textContent =  dataDate;
+document.querySelector('.data-date-six').textContent =  dataDate;
+document.querySelector('.data-date-seven').textContent =  dataDate;
+document.querySelector('.data-date-eight').textContent =  dataDate;
 
 
 var options = {
@@ -268,19 +275,7 @@ yaxis:{
   min:0,
   max:2500,
   tickAmount:10,
-},
-responsive: [{
-  breakpoint: 480,
-  options: {
-    chart: {
-      width: 350
-    },
-    xaxis: {
-      categories: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],
-    },
-  }
-  
-}]
+}
 };
 
 var chartFour = new ApexCharts(document.querySelector("#chart-analytics-two"), options);
@@ -773,7 +768,7 @@ yaxis:{
   tickAmount:3,
 },
 title: {
-  text: 'Average Power',
+  text: 'Run Hours',
   align: 'left'
 },
 };
@@ -916,5 +911,68 @@ function HourFilter (event){
 }
 runHours.addEventListener("change", HourFilter) 
 
+var options = {
+  series: [
+    {
+      name: "Fuel Consumption",
+      data: [220, 150, 100, 100, 100, 170, 250]
+    },
+    {
+      name: "Output Power (kw)",
+      data: [150, 40, 14, 20, 20, 50, 150]
+    }
+  ],
+  chart: {
+  height: 350,
+  type: 'line',
+  zoom: {
+    enabled: false
+  }
+},
+colors: ['#298AFF', '#ED1C24'],
+dataLabels: {
+  enabled: false
+},
+stroke: {
+  curve: 'smooth',
+  width: 1.5
+},
+title: {
+  text: 'Engine Perfomance',
+  align: 'left'
+},
+grid: {
+  row: {
+    colors: ['transparent'], // takes an array which will be repeated on columns
+    opacity: 0.5
+  },
+},
+xaxis: {
+  categories: [0,5,10,15,20,25,30],
+  title: {
+    text: 'Output Power (kw)',
+    style: {
+      fontSize:'14px'
+    }
+  }
+},
+yaxis:{
+  min:0,
+  max:250,
+  tickAmount:5,
+  title: {
+    text: 'Fuel Consumption',
+    style: {
+      fontSize:'14px'
+    }
+  }
+},
+legend: {
+  show: false
+}
 
+};
+
+var chartEleven = new ApexCharts(document.querySelector("#chart-analytics-nine"), options);
+chartEleven.render();
 

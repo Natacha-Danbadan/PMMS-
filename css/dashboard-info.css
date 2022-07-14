@@ -86,7 +86,13 @@
     box-shadow: 0px 4px 44px rgba(0, 0, 0, 0.08);
     border-radius: 8px;
 } 
-
+.data-text, .data-text-two, .data-text-three, .data-text-four, .data-text-five, .data-text-six, .data-text-seven, .data-text-eight, .data-text-nine{
+    font-size: 12px;
+    color: #747474;
+}
+.data-date, .data-date-two, .data-date-three, .data-date-four, .data-date-five, .data-date-six, .data-date-seven, .data-date-eight{
+    font-size: 12px;
+}
 
 
 

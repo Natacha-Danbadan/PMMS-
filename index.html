@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard-info.css">
     <title>Heliom dashboard</title>
 </head>
 <body>
@@ -125,10 +125,288 @@
             </div>
         </section>
     </div>
-
+    <div class="container">
+        <section>
+            <div class="row mb-5">
+                <div class="col-lg-3 mb-3">
+                    <div class="card first-estimate">
+                        <div class="card-body">
+                            <div class="d-flex text-white justify-content-between lh-1">
+                                <p class="gen">Estimated Fuel Budgets</p>
+                                <img src="img/Vector.png" class="h-50" alt="">
+                            </div>
+                            <P class="text-white border-bottom fs-4">₦500,000</P> 
+                            <div class="d-flex text-white justify-content-evenly">
+                                <p>3.48%</p>
+                                <p>Since last month</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-3">
+                    <div class="card second-estimate">
+                        <div class="card-body">
+                            <div class="d-flex text-white justify-content-between lh-1">
+                                <p class="gen">Actual Fuel Budgets</p>
+                                <img src="img/Vector.png" class="h-50" alt="">
+                            </div>
+                            <P class="text-white border-bottom fs-4">₦450,000</P> 
+                            <div class="d-flex text-white justify-content-evenly">
+                                <p>3.48%</p>
+                                <p>Since last month</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-3">
+                    <div class="card third-estimate">
+                        <div class="card-body">
+                            <div class="d-flex text-white justify-content-between lh-1">
+                                <p class="gen">Estimated Maintenance Budgets</p>
+                                <img src="img/Vector.png" class="h-50" alt="">
+                            </div>
+                            <P class="text-white border-bottom fs-4">₦100,000</P> 
+                            <div class="d-flex text-white justify-content-evenly">
+                                <p>3.48%</p>
+                                <p>Since last month</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-3">
+                    <div class="card fourth-estimate">
+                        <div class="card-body">
+                            <div class="d-flex text-white justify-content-between lh-1">
+                                <p class="gen">Actual Maintenance Expenditure</p>
+                                <img src="img/Vector.png" class="h-50" alt="">
+                            </div>
+                            <P class="text-white border-bottom fs-4">₦98,000</P> 
+                            <div class="d-flex text-white justify-content-evenly">
+                                <p>3.48%</p>
+                                <p>Since last month</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card bg-alarm p-5 mb-5">
+                        <div class="d-flex justify-content-between mb-2">
+                            <p class="data-text">Data current: Monday - Sunday</p>
+                            <button type="button" class="data-date btn d-flex btn-outline-secondary"></button> 
+                        </div>
+                        <div id="chart-analytics-one" class="col-12 pb-3"></div>
+                        <div class="d-flex inlineRadio">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" checked value="Days">
+                                <label class="form-check-label pe-3"  for="inlineRadio1">Days </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Weeks">
+                                <label class="form-check-label pe-3" for="inlineRadio2">Weeks</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"  value="Months">
+                                <label class="form-check-label pe-3" for="inlineRadio2">Months</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card bg-alarm p-5 mb-5">
+                        <div class="d-flex justify-content-between mb-2">
+                            <p class="data-text-two">Data current: Monday - Sunday</p>
+                            <button type="button" class="data-date btn d-flex btn-outline-secondary"></button> 
+                        </div>
+                        <div id="chart-analytics-two" class="col-12 pb-3"></div>
+                        <div class="d-flex inlineRadioTwo">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" checked value="Days">
+                                <label class="form-check-label pe-3"  for="inlineRadio1">Days </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Weeks">
+                                <label class="form-check-label pe-3" for="inlineRadio2">Weeks</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"  value="Months">
+                                <label class="form-check-label pe-3" for="inlineRadio2">Months</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="card bg-alarm p-5 mb-5">
+                        <div class="d-flex justify-content-between mb-2">
+                            <p class="data-text-three">Data current: Monday - Sunday</p>
+                            <button type="button" class="data-date btn d-flex btn-outline-secondary"></button> 
+                        </div>
+                        <div id="chart-analytics-three" class="col-12 pb-3"></div>
+                        <div class="d-flex inlineRadioThree">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" checked value="Days">
+                                <label class="form-check-label pe-3"  for="inlineRadio1">Days </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Weeks">
+                                <label class="form-check-label pe-3" for="inlineRadio2">Weeks</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"  value="Months">
+                                <label class="form-check-label pe-3" for="inlineRadio2">Months</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="card bg-alarm p-5 mb-5">
+                        <div class="d-flex justify-content-between mb-2">
+                            <p class="data-text-four">Data current: Monday - Sunday</p>
+                            <button type="button" class="data-date btn d-flex btn-outline-secondary"></button> 
+                        </div>
+                        <div id="chart-analytics-four" class="col-12 pb-3"></div>
+                        <div class="d-flex inlineRadioFour">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" checked value="Days">
+                                <label class="form-check-label pe-3"  for="inlineRadio1">Days </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Weeks">
+                                <label class="form-check-label pe-3" for="inlineRadio2">Weeks</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"  value="Months">
+                                <label class="form-check-label pe-3" for="inlineRadio2">Months</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="card bg-alarm p-5 mb-5">
+                        <div class="d-flex justify-content-between mb-2">
+                            <p class="data-text-five">Data current: Monday - Sunday</p>
+                            <button type="button" class="data-date btn d-flex btn-outline-secondary"></button> 
+                        </div>
+                        <div id="chart-analytics-five" class="col-12 pb-3"></div>
+                        <div class="d-flex inlineRadioFive">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" checked value="Days">
+                                <label class="form-check-label pe-3"  for="inlineRadio1">Days </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Weeks">
+                                <label class="form-check-label pe-3" for="inlineRadio2">Weeks</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"  value="Months">
+                                <label class="form-check-label pe-3" for="inlineRadio2">Months</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="card bg-alarm p-5 mb-5">
+                        <div class="d-flex justify-content-between mb-2">
+                            <p class="data-text-six">Data current: Monday - Sunday</p>
+                            <button type="button" class="data-date btn d-flex btn-outline-secondary"></button> 
+                        </div>
+                        <div id="chart-analytics-six" class="col-12 pb-3"></div>
+                        <div class="d-flex inlineRadioSix">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" checked value="Days">
+                                <label class="form-check-label pe-3"  for="inlineRadio1">Days </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Weeks">
+                                <label class="form-check-label pe-3" for="inlineRadio2">Weeks</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"  value="Months">
+                                <label class="form-check-label pe-3" for="inlineRadio2">Months</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card bg-alarm p-5 mb-5">
+                        <div class="d-flex justify-content-between mb-2">
+                            <p class="data-text-seven">Data current: Monday - Sunday</p>
+                            <button type="button" class="data-date btn d-flex btn-outline-secondary"></button> 
+                        </div>
+                        <div id="chart-analytics-seven" class="col-12 pb-3"></div>
+                        <div class="d-flex inlineRadioSeven">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" checked value="Days">
+                                <label class="form-check-label pe-3"  for="inlineRadio1">Days </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Weeks">
+                                <label class="form-check-label pe-3" for="inlineRadio2">Weeks</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"  value="Months">
+                                <label class="form-check-label pe-3" for="inlineRadio2">Months</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card bg-alarm p-5 mb-5">
+                        <div class="d-flex justify-content-between mb-2">
+                            <p class="data-text-eight">Data current: Monday - Sunday</p>
+                            <div>
+                                <select id="run-hours" class="form-select" aria-label="Default select example">
+                                  <option value="Filter" selected>Filter</option>
+                                  <option value="Past-months">Past Months</option>
+                                  <option value="Jan">Jan</option>
+                                  <option value="Feb">Feb</option>
+                                  <option value="Mar">Mar</option>
+                                  <option value="Apr">Apr</option>
+                                  <option value="May">May</option>
+                                  <option value="Jun">Jun</option>
+                                  <option value="Jul">Jul</option>
+                                  <option value="Aug">Aug</option>
+                                  <option value="Sep">Sep</option>
+                                  <option value="Oct">Oct</option>
+                                  <option value="Nov">Nov</option>
+                                  <option value="Dec">Dec</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="chart-analytics-eight" class="col-12 pb-3"></div>
+                        <div class="d-flex inlineRadioEight">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" checked value="Days">
+                                <label class="form-check-label pe-3"  for="inlineRadio1">Days </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Weeks">
+                                <label class="form-check-label pe-3" for="inlineRadio2">Weeks</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"  value="Months">
+                                <label class="form-check-label pe-3" for="inlineRadio2">Months</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    
     <script src="js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="js/index.js"></script>
+    <script src="js/dashboard-info.js"></script>
 </body>
 </html>
 

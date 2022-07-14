@@ -21,12 +21,7 @@
     border-radius: 4px;
 } 
 
-.bg-alarm {
-    background: #FFFFFF;
-    box-shadow: 0px 2px 12px rgba(37, 51, 66, 0.15);
-    border-radius: 8px;
-}
-.bg-pie {
+.bg-alarm, .bg-pie {
     background: #FFFFFF;
     box-shadow: 0px 2px 12px rgba(37, 51, 66, 0.15);
     border-radius: 8px;
@@ -69,12 +64,28 @@
     font-size:12px;
 }
 
-.apexcharts-tooltip {
-    background: #f3f3f3;
-    color: orange;
-}
- 
+.first-estimate{
+    background: linear-gradient(270deg, #FBB675 0%, #EE7808 100%);
+    border-radius: 8px;
+} 
 
+.second-estimate{
+    background: linear-gradient(90deg, #FF050F 7.47%, #ED8A8E 109.73%);
+    box-shadow: 0px 4px 44px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+} 
+
+.third-estimate{
+    background: linear-gradient(90deg, #8262FF 50%, #B19DFF 103.15%);
+    box-shadow: 0px 4px 44px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+} 
+
+.fourth-estimate{
+    background: linear-gradient(90deg, #298AFF 50%, #9BCCF9 103.15%);
+    box-shadow: 0px 4px 44px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+} 
 
 
 

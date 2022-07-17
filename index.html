@@ -5,11 +5,124 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/dashboard-nav.css">
+    <link rel="stylesheet" href="css/analytics.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="css/dashboard-info.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+    <script src="https://kit.fontawesome.com/d972efdfc6.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <title>Heliom dashboard</title>
 </head>
-<body>
+<body class="bg-bdy">
+    <!-- Navbar and sidebar start -->
+   <div class="container-fluid" id="navHeader" style="padding: 0;">
+    <nav class="navbar p-4 navbar-expand-lg navbar-light align-content-center" style="background-color: #51A4F1;">
+       <button class="btn btn-primary me-lg-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i class="bi bi-list"></i></button>
+       <form class="d-flex ms-2" role="search" style="width:50%">
+          <div class="search-bar">
+             <i class="bi bi-search"></i>
+             <input class="form-control text-light input-field" type="search" placeholder="Search data" aria-label="Search" style="background-color: #51A4F1;">
+          </div>                    
+       </form>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse justify-content-end pe-3" id="navbarSupportedContent">
+          <div class="navbar-nav align-items-center" >
+             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0 align-items-center" >
+                   <li class="nav-item">
+                      <a class="nav-link position-relative"  href="#"> <img src="./img/navMessage.png">
+                         <span class="position-absolute top-10 start-10 translate-middle badge rounded-pill bg-danger">
+                            8
+                            <span class="visually-hidden">unread messages</span>
+                         </span>
+                      </a>
+                   </li>
+
+                   <li class="nav-item">
+                      <a class="nav-link" href="#"><img src="./img/navNotify.png"></a>
+                   </li>
+                   <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img src="./img/admin-img.png" class="me-2">
+                      <p class="mb-0 me-3 text-light">Admin</p>
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                         <li><a class="dropdown-item" href="#">Log out</a></li>
+                      </ul>
+                   </li>
+                </ul>
+             </div>
+          </div>
+       </div>  
+    </nav>
+ </div>
+ <!-- Navbar end -->
+
+ <!-- Sidebar start -->
+ <div class="offcanvas offcanvas-start " data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">   
+    <div class="offcanvas-header">
+       <h5 class="offcanvas-title text-center" id="offcanvasScrollingLabel"> 
+          <img src="./img/dashHeliumLogo.png" class="w-100">
+       </h5>
+       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+       <div id="sidebar">      
+          <div class="mt-5">
+             <h6>MAIN-MENU</h6>
+             <div class="dashContent ">                  
+                <div class=" dashBoard d-flex align-items-center">                       
+                   <img src="./img/dashboard.png" class="me-3">                           
+                   <a href="#" class="ms-2 mb-0 ">Dashboard</a>
+                </div>
+                <br>
+                <div class="sidenav">
+                   <button class="dropdown-btn d-flex align-items-center" >
+                      <img src="./img/dashRealTimeInfo.png" class="me-3">
+                   <a href="#" class="me-4 RealTimeNoHover"> Real Time Info </a>
+                      <i class="bi bi-caret-down-fill"></i>
+                   </button>
+                   <div class="dropdown-container">
+                      <a href="#" class="mb-4 mt-2">Generators</a>
+                      <a href="#" class="mb-4 mt-2">Measurement</a>
+                      <a href="#" class="mb-4">Wave Form</a>
+                      <a href="#" class="mb-4">Analytics</a>
+                      <a href="#" class="mb-4">Alarm</a>
+                      <a href="#" class="mb-4">Map</a>
+                   </div>
+                </div>
+                <br>
+                <div class=" notifications d-flex align-items-center mt-5 mb-2">
+                   <a href="#" class="position-relative"> <img src="./img/dashNotification.png" class="me-3 ms-0">   
+                      <span class="position-absolute top-0 start-0 translate-middle p-2 bg-danger border border-light rounded-circle">
+                         <span class="visually-hidden">New alerts</span>
+                       </span>                        
+                      Notifications
+                   </a>
+                </div>
+             </div>
+             <br>
+             <br>
+             <h6>PREFERENCES</h6>
+             <div class="dashContent">
+                <div class=" dashUser mb-2 mt-2 d-flex align-items-center">
+                   <img src="./img/dashUser.png" class="me-3">
+                   <a href="#">User</a>
+                </div>
+                <br>
+                <div class=" dashSetting d-flex align-items-center pb-5">
+                   <img src="./img/dashSetting.png" class="me-2">
+                   <a href="#">Settings</a>
+                </div>
+             </div>
+          </div>             
+       </div>
+    </div>
+ </div>
+ <!-- Sidebar End -->
+
     <div class="container">
         <section class="my-5">
             <div class="row">
@@ -191,48 +304,48 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <div class="card bg-alarm p-5 mb-5">
+                    <div class="card bg-alarm p-lg-5 p-md-5 p-2 mb-5">
                         <div class="d-flex justify-content-between mb-2">
-                            <p class="data-text">Data current: Monday - Sunday</p>
+                            <p class="data-text">Data current: <span class="fw-bold">Monday 14 - Sunday 26</span> </p>
                             <button type="button" class="data-date btn d-flex btn-outline-secondary"></button> 
                         </div>
                         <div id="chart-analytics-one" class="col-12 pb-3"></div>
                         <div class="d-flex inlineRadio">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Days" checked>
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions1" value="Days" checked>
                                 <label class="form-check-label pe-3"  for="inlineRadio1">Days</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Weeks">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions1" value="Weeks">
                                 <label class="form-check-label pe-3" for="inlineRadio2">Weeks</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions"  value="Months">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions1"  value="Months">
                                 <label class="form-check-label pe-3" for="inlineRadio2">Months</label>
                             </div>
                         </div>
-                    </div>
+                    </div> 
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <div class="card bg-alarm p-5 mb-5">
+                    <div class="card bg-alarm p-lg-5 p-md-5 p-2 mb-5">
                         <div class="d-flex justify-content-between mb-2">
-                            <p class="data-text-two">Data current: Monday - Sunday</p>
+                            <p class="data-text-two">Data current: <span class="fw-bold">Monday 14 - Sunday 26</span> </p>
                             <button type="button" class="data-date-two btn d-flex btn-outline-secondary"></button> 
                         </div>
                         <div id="chart-analytics-two" class="col-12 pb-3"></div>
                         <div class="d-flex inlineRadioTwo">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" checked value="Days">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions2" checked value="Days">
                                 <label class="form-check-label pe-3"  for="inlineRadio1">Days </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Weeks">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions2" value="Weeks">
                                 <label class="form-check-label pe-3" for="inlineRadio2">Weeks</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions"  value="Months">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions2"  value="Months">
                                 <label class="form-check-label pe-3" for="inlineRadio2">Months</label>
                             </div>
                         </div>
@@ -241,46 +354,46 @@
             </div>
             <div class="row">
                 <div class="col-lg-6 col-12">
-                    <div class="card bg-alarm p-5 mb-5">
+                    <div class="card bg-alarm p-lg-5 p-md-5 p-2 mb-5">
                         <div class="d-flex justify-content-between mb-2">
-                            <p class="data-text-three">Data current: Monday - Sunday</p>
+                            <p class="data-text-three">Data current: <span class="fw-bold">Monday 14 - Sunday 26</span> </p>
                             <button type="button" class="data-date-three btn d-flex btn-outline-secondary"></button> 
                         </div>
                         <div id="chart-analytics-three" class="col-12 pb-3"></div>
                         <div class="d-flex inlineRadioThree">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" checked value="Days">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions3" checked value="Days">
                                 <label class="form-check-label pe-3"  for="inlineRadio1">Days </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Weeks">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions3" value="Weeks">
                                 <label class="form-check-label pe-3" for="inlineRadio2">Weeks</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions"  value="Months">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions3"  value="Months">
                                 <label class="form-check-label pe-3" for="inlineRadio2">Months</label>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-12">
-                    <div class="card bg-alarm p-5 mb-5">
+                    <div class="card bg-alarm p-lg-5 p-md-5 p-2 mb-5">
                         <div class="d-flex justify-content-between mb-2">
-                            <p class="data-text-four">Data current: Monday - Sunday</p>
+                            <p class="data-text-four">Data current: <span class="fw-bold">Monday 14 - Sunday 26</span> </p>
                             <button type="button" class="data-date-four btn d-flex btn-outline-secondary"></button> 
                         </div>
                         <div id="chart-analytics-four" class="col-12 pb-3"></div>
                         <div class="d-flex inlineRadioFour">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" checked value="Days">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions4" checked value="Days">
                                 <label class="form-check-label pe-3"  for="inlineRadio1">Days </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Weeks">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions4" value="Weeks">
                                 <label class="form-check-label pe-3" for="inlineRadio2">Weeks</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions"  value="Months">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions4"  value="Months">
                                 <label class="form-check-label pe-3" for="inlineRadio2">Months</label>
                             </div>
                         </div>
@@ -289,32 +402,32 @@
             </div>
             <div class="row">
                 <div class="col-lg-6 col-12">
-                    <div class="card bg-alarm p-5 mb-5">
+                    <div class="card bg-alarm p-lg-5 p-md-5 p-2 mb-5">
                         <div class="d-flex justify-content-between mb-2">
-                            <p class="data-text-five">Data current: Monday - Sunday</p>
+                            <p class="data-text-five">Data current: <span class="fw-bold">Monday 14 - Sunday 26</span> </p>
                             <button type="button" class="data-date-five btn d-flex btn-outline-secondary"></button> 
                         </div>
                         <div id="chart-analytics-five" class="col-12 pb-3"></div>
                         <div class="d-flex inlineRadioFive">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" checked value="Days">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions5" checked value="Days">
                                 <label class="form-check-label pe-3"  for="inlineRadio1">Days </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Weeks">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions5" value="Weeks">
                                 <label class="form-check-label pe-3" for="inlineRadio2">Weeks</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions"  value="Months">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions5"  value="Months">
                                 <label class="form-check-label pe-3" for="inlineRadio2">Months</label>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6  col-12">
-                    <div class="card bg-alarm p-5 mb-5">
+                    <div class="card bg-alarm p-lg-5 p-md-5 p-2 mb-5">
                         <div class="d-flex justify-content-between mb-2">
-                            <p class="data-text-six">Data current: Monday - Sunday</p>
+                            <p class="data-text-six">Data current: <span class="fw-bold">Monday 14 - Sunday 26</span> </p>
                             <button type="button" class="data-date-six btn d-flex btn-outline-secondary"></button> 
                         </div>
                         <div id="chart-analytics-six" class="col-12 pb-3"></div>
@@ -337,32 +450,32 @@
             </div>
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="card bg-alarm p-5 mb-5">
+                    <div class="card bg-alarm p-lg-5 p-md-5 p-2 mb-5">
                         <div class="d-flex justify-content-between mb-2">
-                            <p class="data-text-seven">Data current: Monday - Sunday</p>
+                            <p class="data-text-seven">Data current: <span class="fw-bold">Monday 14 - Sunday 26</span> </p>
                             <button type="button" class="data-date-seven btn d-flex btn-outline-secondary"></button> 
                         </div>
                         <div id="chart-analytics-seven" class="col-12 pb-3"></div>
                         <div class="d-flex inlineRadioSeven">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" checked value="Days">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions6" value="Days" checked>
                                 <label class="form-check-label pe-3"  for="inlineRadio1">Days </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Weeks">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions6" value="Weeks">
                                 <label class="form-check-label pe-3" for="inlineRadio2">Weeks</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions"  value="Months">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions6"  value="Months">
                                 <label class="form-check-label pe-3" for="inlineRadio2">Months</label>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="card bg-alarm p-5 mb-5">
+                    <div class="card bg-alarm p-lg-5 p-md-5 p-2 mb-5">
                         <div class="d-flex justify-content-between mb-2">
-                            <p class="data-text-eight">Data current: Monday - Sunday</p>
+                            <p class="data-text-eight">Data current: <span class="fw-bold">Monday 14 - Sunday 26</span> </p>
                             <div>
                                 <select id="run-hours" class="form-select" aria-label="Default select example">
                                   <option value="Filter" selected>Filter</option>
@@ -385,15 +498,15 @@
                         <div id="chart-analytics-eight" class="col-12 pb-3"></div>
                         <div class="d-flex inlineRadioEight">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" checked value="Days">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions7" checked value="Days">
                                 <label class="form-check-label pe-3"  for="inlineRadio1">Days </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Weeks">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions7" value="Weeks">
                                 <label class="form-check-label pe-3" for="inlineRadio2">Weeks</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions"  value="Months">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions7"  value="Months">
                                 <label class="form-check-label pe-3" for="inlineRadio2">Months</label>
                             </div>
                         </div>
@@ -402,23 +515,23 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <div class="card bg-alarm p-5 mb-5">
+                    <div class="card bg-alarm p-lg-5 p-md-5 p-2 mb-5">
                         <div class="d-flex justify-content-between mb-2">
-                            <p class="data-text-nine">Data current: Monday - Sunday</p>
+                            <p class="data-text-nine">Data current: <span class="fw-bold">Monday 14 - Sunday 26</span> </p>
                             <button type="button" class="data-date-eight btn d-flex btn-outline-secondary"></button> 
                         </div>
                         <div id="chart-analytics-nine" class="col-12 pb-3"></div>
                         <div class="d-flex inlineRadioNine">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Days" checked>
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions8" value="Days" checked>
                                 <label class="form-check-label pe-3"  for="inlineRadio1">Days</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Weeks">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions8" value="Weeks">
                                 <label class="form-check-label pe-3" for="inlineRadio2">Weeks</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions"  value="Months">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions8"  value="Months">
                                 <label class="form-check-label pe-3" for="inlineRadio2">Months</label>
                             </div>
                         </div>
@@ -428,10 +541,11 @@
         </section>
     </div>
     
-    
+    <script src="js/dashboard-nav.js"></script>
+    <script src="js/analytics.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="js/dashboard-info.js"></script>
+    
+    
 </body>
 </html>
 

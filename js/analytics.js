@@ -267,6 +267,9 @@ grid: {
     colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
     opacity: 0.5
   },
+  // padding:{
+  //   left: 0,
+  // },
 },
 xaxis: {
   categories: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],
@@ -275,7 +278,11 @@ yaxis:{
   min:0,
   max:2500,
   tickAmount:10,
-}
+  // labels:{
+  //   offsetX: -25,
+  // },
+},
+
 };
 
 var chartFour = new ApexCharts(document.querySelector("#chart-analytics-two"), options);
@@ -976,3 +983,62 @@ legend: {
 var chartEleven = new ApexCharts(document.querySelector("#chart-analytics-nine"), options);
 chartEleven.render();
 
+let chartAnalyticsNine = document.querySelector("#chart-analytics-nine");
+let inlineRadioNine = document.querySelector(".inlineRadioNine");
+let dataTextNine = document.querySelector(".data-text-nine")
+
+
+function onChangeDataNine (event){
+  let eventValue = event.target.value;
+  if (eventValue === "Days"){
+    chartEleven.updateOptions({
+      series: [
+        {
+          name: "Fuel Consumption",
+          data: [220, 150, 100, 100, 100, 170, 250]
+        },
+        {
+          name: "Output Power (kw)",
+          data: [150, 40, 14, 20, 20, 50, 150]
+        }
+      ],
+    }) 
+    dataTextNine.textContent = "Data current:" + " " + "Monday - Sunday"
+  }
+
+  else if (eventValue === "Weeks"){
+    chartEleven.updateOptions({
+      series: [
+        {
+          name: "Fuel Consumption",
+          data: [200, 150, 120, 140, 150, 190, 250]
+        },
+        {
+          name: "Output Power (kw)",
+          data: [130, 30, 20, 35, 40, 70, 120]
+        }
+      ],
+    }) 
+
+    dataTextNine.textContent = "Data current:" + " " + "Week 1 - Week 4"
+  }
+
+  else  {
+    chartEleven.updateOptions({
+      series: [
+        {
+          name: "Fuel Consumption",
+          data: [220, 150, 100, 100, 100, 170, 250]
+        },
+        {
+          name: "Output Power (kw)",
+          data: [150, 40, 14, 20, 20, 50, 150]
+        }
+      ],
+    }) 
+    dataTextNine.textContent = "Data current:" + " " + "January - December"
+  }
+
+}
+
+inlineRadioNine.addEventListener("click", onChangeDataNine);

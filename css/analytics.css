@@ -6,11 +6,15 @@
     box-sizing: border-box;
     font-family:'roboto';
 }
-
+.bg-bdy{
+    background: #F5F5F5;
+}
 .card {
     border: none;
 }
-
+.form-check-input:checked[type=radio] {
+    background-image: none;
+}
 .orange-bg{
     background: linear-gradient(270deg, #FFCB9A 0%, #EE7808 100%);
     border-radius: 4px;
@@ -93,6 +97,4 @@
 .data-date, .data-date-two, .data-date-three, .data-date-four, .data-date-five, .data-date-six, .data-date-seven, .data-date-eight{
     font-size: 12px;
 }
-
-
 
